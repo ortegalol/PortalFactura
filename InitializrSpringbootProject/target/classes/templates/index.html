@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Formulario de Datos</title>
+        <meta charset="UTF-8">
+            <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+            <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+            <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+            <style>
+                body {
+                    background-image:
+                        url('https://www.gob.mx/cms/uploads/identity/image/32471/cabecera_blanca.jpg');
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+                }
+                .formulario {
+                    position: relative;
+                    background-color: rgba(128, 128, 128, 0.2);
+                    padding: 20px;
+                    margin: auto; /* Agrega esta línea para centrar horizontalmente */
+                    max-width: 800px; /* Agrega esta línea para limitar el ancho máximo del formulario */
+                }
+                .mensaje {
+                    font-size: 14px; /* Tamaño de fuente más pequeño */
+                    color: #888; /* Color gris */
+                }
+            </style>
+
+    </head>
+
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <div class="container d-flex justify-content-center">
+            <div class="formulario">
+                <form th:action="@{/execute}" method="post">
+                    <table style="margin-left:auto;margin-right:auto;">
+                        <tr>
+                            <td><label for="fecha">Fecha:</label></td>
+                            <td><input type="date" id="fecha" name="fecha"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="tienda">Tienda:</label></td>
+                            <td><input type="text" id="tienda" name="tienda" style="background-color: red;"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="caja">Caja:</label></td>
+                            <td><input type="text" id="caja" name="caja" style="background-color: yellow;"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="ticket">Ticket:</label></td>
+                            <td><input type="text" id="ticket" name="ticket" style="background-color: green;"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="rfc">RFC:</label></td>
+                            <td><input type="text" id="rfc" name="rfc"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="nombre">Nombre:</label></td>
+                            <td><input type="text" id="nombre" name="nombre"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="CP">Código Postal:</label></td>
+                            <td><input type="text" id="CP" name="CP"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="regimen">Régimen:</label></td>
+                            <td><input type="text" id="regimen" name="regimen"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Cfdi">CFDI:</label></td>
+                            <td><input type="text" id="Cfdi" name="Cfdi"><br></td>
+                                        </table>
+                                        <div class="d-flex justify-content-between">
+                                            <button type="reset" class="btn btn-secondary">Limpiar</button>
+                                            <input type="submit" value="Facturar" class="btn btn-primary">
+                                        </div>
+                                        </form>
+                                        <div class="mensaje">
+                                            <p>
+                                                <br>
+                                                    ► Estimado cliente, SUPERISSSTE le informa que podrá emitir el CFDI durante todo el mes en que se haya realizado la compra.
+                                                    Si el CFDI se solicita en un mes distinto éste no podrá ser emitido.
+                                            </p>
+                                            <p>
+                                                ► No es necesario capturar los ceros a la izquierda del número de Ticket y Caja
+                                                <br>
+                                                    ► Para dudas o aclaraciones favor de enviar un correo a la cuenta de factura.electronica@superissste.gob.mx
+                                            </p>
+                                        </div>
+
+                                        </div>
+                                        <img src="http://factura.superissste.gob.mx:8081/cfdi/Imagenes/Ticket_static.png" style="float:right;">
+                                            </div>
+                                            </body>
+                                            </html>
+
+
